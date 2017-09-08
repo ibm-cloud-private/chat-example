@@ -10,7 +10,7 @@ spec:
       - path: /chat-example
         backend:
           serviceName: chat-example-service
-servicePort: 9080
+          servicePort: 9080
 ---
 apiVersion: v1
 kind: Service
