@@ -1,9 +1,22 @@
 ---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: chat-example-ingress
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /chat-example
+        backend:
+          serviceName: chat-example-service
+servicePort: 9080
+---
 apiVersion: v1
 kind: Service
 
 metadata:
-  name: chat-example-svc
+  name: chat-example-service
   labels:
     app: chat-example
 spec:
