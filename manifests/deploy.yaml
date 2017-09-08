@@ -11,6 +11,7 @@ spec:
 
   ports:
   - name: chat-port
+    port: 8080
     targetPort: 8080
     protocol: TCP
 
@@ -47,4 +48,4 @@ spec:
             port: 8080
         env:
           - name: PORT
-            value: 8080
+            value: "8080"
