@@ -1,0 +1,50 @@
+---
+apiVersion: v1
+kind: Service
+
+metadata:
+  name: chat-example-svc
+  labels:
+    app: chat-example
+spec:
+  type: LoadBalancer
+
+  ports:
+  - name: chat-port
+    targetPort: 8080
+    protocol: TCP
+
+  selector:
+    app: chat-example
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+
+metadata:
+  name: chat-example
+  labels:
+    app: chat-example
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: chat-example
+
+  template:
+    metadata:
+      labels:
+        app: chat-example
+
+    spec:
+      containers:
+      - name: chat-example
+        image: chat-example:latest
+        imagePullPolicy: IfNotPresent
+
+        readinessProbe:
+          tcpSocket:
+            port: 8080
+        env:
+          - name: PORT
+            value: "8080"
