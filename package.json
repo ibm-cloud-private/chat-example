@@ -5,7 +5,8 @@
   "dependencies": {
     "express": "^4.15.2",
     "socket.io": "^1.7.3",
-    "cowsay": ""
+    "cowsay": "",
+    "one-liner-joke": ""
   },
   "scripts": {
     "start": "node index.js"
