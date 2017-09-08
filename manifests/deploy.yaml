@@ -4,7 +4,7 @@ kind: Ingress
 metadata:
   name: chat-example-ingress
   annotations:
-    ingress.kubernetes.io/rewrite-target: /
+    #ingress.kubernetes.io/rewrite-target: /
     nginx.org/websocket-services: "chat-example-service"
 spec:
   rules:
