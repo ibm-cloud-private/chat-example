@@ -3,8 +3,8 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: chat-example-ingress
-  #annotations:
-  #  ingress.kubernetes.io/rewrite-target: /
+  annotations:
+    ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
   - http:
