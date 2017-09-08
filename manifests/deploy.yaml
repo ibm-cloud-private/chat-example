@@ -14,6 +14,10 @@ spec:
         backend:
           serviceName: chat-example-service
           servicePort: 8080
+      - path: /socket.io
+        backend:
+          serviceName: chat-example-service
+          servicePort: 8080
 ---
 apiVersion: v1
 kind: Service
