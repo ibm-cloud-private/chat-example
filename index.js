@@ -18,8 +18,12 @@ io.on('connection', function(socket){
 	                  T : "U "
              });
     
+	  
+	  
     io.emit('chat message', msg);
     
+	  console.log("msg1:" + msg1);
+	  
     io.emit('chat message', msg1);
     
   });
