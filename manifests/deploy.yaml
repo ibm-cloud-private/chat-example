@@ -47,4 +47,4 @@ spec:
             port: 8080
         env:
           - name: PORT
-            value: "8080"
+            value: 8080
